@@ -96,8 +96,17 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
-  /* code here */
+function getAverageGoals(finalsCallback) {
+  const home = finalsCallback.reduce((sum, current) => {
+    return sum + current['Home Team Goals']
+  }, 0)
+
+  const away = finalsCallback.reduce((sum, current) => {
+    return sum + current['Away Team Goals']
+  }, 0)
+
+  const average = home / finalsCallback.length + away / finalsCallback.length
+  return average.toFixed(2)
 }
 
 /// 🥅 STRETCH 🥅 ///
