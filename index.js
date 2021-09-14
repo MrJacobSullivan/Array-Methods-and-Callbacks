@@ -79,8 +79,11 @@ hint: the strings returned need to exactly match the string in step 4.
  */
 
 function getWinnersByYear(array, yearsCallback, winnersCallback) {
-  const constructString = (year, winner) => `In ${year}, ${winner} won the world cup!`
-  return array.map((item, i) => constructString(yearsCallback(array)[i], winnersCallback(array)[i]))
+  return array.map((item, i) => {
+    const year = yearsCallback(array)[i]
+    const winner = winnersCallback(array)[i]
+    return `In ${year}, ${winner} won the world cup!`
+  })
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
