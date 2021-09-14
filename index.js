@@ -18,11 +18,7 @@ console.log(worldCup2014Finals['Home Team Goals'])
 //(d) Away Team goals for 2014 world cup final
 console.log(worldCup2014Finals['Away Team Goals'])
 //(e) Winner of 2014 world cup final */
-console.log(
-  worldCup2014Finals['Home Team Goals'] > worldCup2014Finals['Away Team Goals']
-    ? worldCup2014Finals['Home Team Name']
-    : worldCup2014Finals['Away Team Name']
-)
+console.log(worldCup2014Finals['Win conditions'])
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
@@ -43,9 +39,7 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(array, callback) {
-  const finals = callback(array)
-  const years = finals.map((final) => final['Year'])
-  return years
+  return callback(array).map((final) => final['Year'])
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
